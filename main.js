@@ -12,6 +12,11 @@
 		const result = document.getElementById('result');
 		const inputValue = input.value;
 
+		if (inputValue <= 0) {
+			result.textContent = '西暦を正確に入力してください';
+			return;
+		}
+
 		if (inputValue % 100 == 0 && inputValue % 400 != 0) {
 			result.textContent = '平年';
 		} else if (inputValue % 4 == 0) {
